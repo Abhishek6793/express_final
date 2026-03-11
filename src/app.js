@@ -28,17 +28,23 @@ app.use(userRoutes);
 // MongoDB connection
 mongoose
   .connect(process.env.MONGO_URI)
-  .then(() => logger.info("✅ Connected to MongoDB"))
-  .catch((err) => logger.error("❌ MongoDB connection error:", err));
+  .then(() => {
+    logger.info("✅ Connected to MongoDB");
+    // Only start server after successful DB connection
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+      logger.info(`Server running on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    logger.error("❌ MongoDB connection error:", err);
+    // Optional: Exit process if DB connection fails
+    // process.exit(1);
+  });
 
 // Error handling
 app.use((err, req, res, next) => {
   logger.error(err.stack);
   res.status(500).json({ message: "Something went wrong!" });
-});
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  logger.info(`Server running on port ${PORT}`);
 });
 //this is test commit
