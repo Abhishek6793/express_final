@@ -1,0 +1,4 @@
+{"level":"info","message":"Server running on port 3000","timestamp":"2026-03-11T14:36:02.188Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2026-03-11T14:36:02.210Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2026-03-11T14:43:02.370Z"}
+{"code":"ECONNREFUSED","hostname":"_mongodb._tcp.cluster0.gcszxsx.mongodb.net","level":"error","message":"❌ MongoDB connection error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.gcszxsx.mongodb.net","stack":"Error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.gcszxsx.mongodb.net\n    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:293:17)","syscall":"querySrv","timestamp":"2026-03-11T14:43:02.377Z"}
