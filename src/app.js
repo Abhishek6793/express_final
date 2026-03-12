@@ -12,7 +12,7 @@ const app = express();
 
 //cors
 app.use(cors({
-  origin: ["http://localhost:5137","https://express-final.onrender.com"],
+  origin: ["http://localhost:5174","https://react-app-final.onrender.com"],
   methods:["GET","POST","PUT","DELETE"],
   credentials:true,
 }))
